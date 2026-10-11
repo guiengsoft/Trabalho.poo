@@ -1,9 +1,9 @@
 package trabalho.poo;
 
-public class Main {
+public class Cinema {
 
 	public static void main(String[] args) {
-	 System.out.println("teste");
+		// TODO Auto-generated method stub
 
 	}
 

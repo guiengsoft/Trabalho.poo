@@ -1,3 +1,5 @@
+package trabalho.poo;
+
 public class Filme {
 
     private final String titulo;

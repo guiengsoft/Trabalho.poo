@@ -71,6 +71,7 @@ public class Sessao {
     }
 
     private static double getValorComDesconto(double percentualDesconto){
-        return precoIngresso = r
+        return precoIngresso - (precoIngresso * percentualDesconto / 100);
     }
+    
 }

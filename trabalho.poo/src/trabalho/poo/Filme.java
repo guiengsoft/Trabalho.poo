@@ -51,10 +51,14 @@ public class Filme {
     public void setSinopse(String sinopse) {
         this.sinopse = sinopse;
     }
-
+ 
+     //aqui vai tentar alterar a categoria do filme 
     public boolean setCategoria(String novaCategoria) {
+    	//Se não veio nada null, recusa antes de comparar, para nao dar erro no programa
         if (novaCategoria == null) {
             return false;
+            // Compara o texto digitado com cada categoria permitida, ignorando maiúsculas e minúsculas 
+            //Na primeira que bater, grava a categoria escrita do jeito oficial e pula as demais.
         }
         if (novaCategoria.equalsIgnoreCase("Ação")) {
             this.categoria = "Ação";
@@ -71,7 +75,7 @@ public class Filme {
         }
         return true;
     }
-
+    //Retorna true se a idade não for negativa e for maior ou igual à classificação do filme; senão, false.
     public boolean podeAssistir(int idade) {
         return idade >= 0 && idade >= classificacao;
     }

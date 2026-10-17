@@ -16,7 +16,7 @@ public class Sessao {
 
         if (capacidade > 0) {
             capacidadeFinal = capacidade;
-        }else{
+        } else {
             capacidadeFinal = 50;
         }
 
@@ -54,8 +54,8 @@ public class Sessao {
         return valorArrecadado;
     }
 
-    public int getLugaresDisponiveis(){
-        return capacidade-qtdIngressos;
+    public int getLugaresDisponiveis() {
+        return capacidade - qtdIngressos;
     }
 
     public static double getPrecoIngresso() {
@@ -63,15 +63,55 @@ public class Sessao {
     }
 
     public static boolean setPrecoIngresso(double precoIngresso) {
-        if(precoIngresso > 0){
+        if (precoIngresso > 0) {
             Sessao.precoIngresso = precoIngresso;
             return true;
         }
         return false;
     }
 
-    private static double getValorComDesconto(double percentualDesconto){
+    private static double getValorComDesconto(double percentualDesconto) {
         return precoIngresso - (precoIngresso * percentualDesconto / 100);
     }
-    
+
+    public int venderIngresso(int idade) {
+        if (idade < 0) {
+            return -1;
+        }
+        if (!filme.podeAssistir(idade)) {
+            return -2;
+        }
+
+        if (getLugaresDisponiveis() <= 0) {
+            return -3;
+        }
+
+        qtdIngressos++;
+        valorArrecadado += getValorComDesconto(0);
+        return 0;
+
+    }
+
+    public int venderIngresso(int idade, String documento) {
+
+        if (documento == null || documento.trim().isEmpty() || idade < 0) {
+            return -1;
+        }
+
+        if (!filme.podeAssistir(idade)) {
+            return -2;
+        }
+
+        if (getLugaresDisponiveis() <= 0) {
+            return -3;
+        }
+
+        qtdIngressos++;
+        valorArrecadado += getValorComDesconto(50);
+        return 0;
+    }
+
+    public LocalTime getHoraTermino() {
+        return horaInicio.plusMinutes(filme.getDuracao());
+    }
 }

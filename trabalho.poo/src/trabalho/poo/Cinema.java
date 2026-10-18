@@ -1,5 +1,6 @@
 package trabalho.poo;
 
+//importa a classe LocalTime, que guarda o horario (hora e minuto)
 import java.time.LocalTime;
 import java.util.Scanner;
 

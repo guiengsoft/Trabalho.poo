@@ -112,7 +112,7 @@ public class Cinema {
                         System.out.println("Capacidade maxima: " + sessao.getCapacidade());
                         System.out.println("Ingressos vendidos: " + sessao.getQtdIngressos());
                         System.out.println("Lugares disponiveis: " + sessao.getLugaresDisponiveis());
-                        System.out.printf("Arrecadacao: R$", sessao.getValorArrecadado());
+                        System.out.printf("Arrecadacao: R$ %.2f%n" , sessao.getValorArrecadado());
                     } else if (op == 2) {
                         System.out.println("1 - Integral");
                         System.out.println("2 - Meia-entrada");

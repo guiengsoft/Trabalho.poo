@@ -1,5 +1,6 @@
 package trabalho.poo;
 
+///importa a classe Scanner, que le o que o usuario digita
 import java.time.LocalTime;
 import java.util.Scanner;
 
